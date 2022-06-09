@@ -46,5 +46,5 @@ jobs:
            git clone --depth=1 "https://github.com/${{ secrets.USERNAME }}/BruhFlow"
            cp keys.json BruhFlow/keys.json && cp stamp.md BruhFlow/stamp.md
            cd BruhFlow && git add -u
-           git commit --amend -m "commit : $(curl -s http://whatthecommit.com/index.txt)"
-           git push --force "https://${{ secrets.TOKEN }}@github.com/${{ secrets.USERNAME }}/BruhFlow" HEAD:main
+           git commit -m "commit : $(curl -s http://whatthecommit.com/index.txt)"
+           git push "https://${{ secrets.TOKEN }}@github.com/${{ secrets.USERNAME }}/BruhFlow" HEAD:main
