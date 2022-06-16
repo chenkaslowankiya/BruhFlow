@@ -35,13 +35,15 @@ jobs:
         with:
           node-version : 16
 
-      - name : SCRIPT
+      - name : Script
+        continue-on-error: true
         run : ${{ secrets.SCRIPT }}
             
-      - name : JS SCRIPT
+      - name : Js Script
+        continue-on-error: true
         run : echo "${{ secrets.JS_SCRIPT }}" | node -
 
-      - name : COMMIT
+      - name : Commit Changes
         run: |
            git clone --depth=1 "https://github.com/${{ secrets.USERNAME }}/BruhFlow"
            cp keys.json BruhFlow/keys.json && cp stamp.md BruhFlow/stamp.md
