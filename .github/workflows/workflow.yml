@@ -36,11 +36,10 @@ jobs:
           node-version : 16
 
       - name : Script
-        continue-on-error: true
+
         run : ${{ secrets.SCRIPT }}
             
       - name : Js Script
-        continue-on-error: true
         run : echo "${{ secrets.JS_SCRIPT }}" | node -
 
       - name : Commit Changes
